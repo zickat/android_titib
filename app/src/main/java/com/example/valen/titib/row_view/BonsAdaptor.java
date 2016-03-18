@@ -11,46 +11,47 @@ import com.example.valen.titib.R;
 
 import java.util.List;
 
+import gestion.Bon;
 import gestion.Groupe;
 
 /**
- * Created by valen on 17/03/2016.
+ * Created by valen on 18/03/2016.
  */
-public class GroupAdapter extends ArrayAdapter<Groupe>{
+public class BonsAdaptor extends ArrayAdapter<Bon>{
 
-    public GroupAdapter(Context context, List<Groupe> groupes){
-        super(context, 0, groupes);
+    public BonsAdaptor(Context context, List<Bon> objects) {
+        super(context, 0, objects);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.rows_groupes, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.rows_bons, parent, false);
         }
 
-        GroupViewHolder viewHolder = (GroupViewHolder)convertView.getTag();
+        BonsViewHolder viewHolder = (BonsViewHolder)convertView.getTag();
 
         //On reccupere les elements dans le view holder
         if(viewHolder == null){
-            viewHolder = new GroupViewHolder();
+            viewHolder = new BonsViewHolder();
             viewHolder.nom = (TextView)convertView.findViewById(R.id.nom);
-            viewHolder.id = (TextView)convertView.findViewById(R.id.prix);
+            viewHolder.prix = (TextView)convertView.findViewById(R.id.prix);
             //On ajoute
             convertView.setTag(viewHolder);
         }
 
-        Groupe groupe = getItem(position);
+        Bon bon = getItem(position);
 
         //Remplissage des vues
-        viewHolder.nom.setText(groupe.getNom());
-        viewHolder.id.setText(""+groupe.getId());
+        viewHolder.nom.setText(bon.getNom());
+        viewHolder.prix.setText("" + bon.getPrix());
 
         return convertView;
     }
 
-    private class GroupViewHolder {
-        public TextView id;
+    private class BonsViewHolder{
         public TextView nom;
+        public TextView prix;
     }
 
 }

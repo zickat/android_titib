@@ -13,16 +13,17 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         tools:text="nom"
-        />
+        android:layout_alignBottom="@+id/prix" />
 
     <TextView
         android:id="@+id/prix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:layout_alignLeft="@+id/nom"
-        android:layout_below="@+id/nom"
         tools:text="id du groupe"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

@@ -81,10 +81,10 @@ public class GroupListActivity extends AppCompatActivity {
 
     private void toGroupe(AdapterView<?> parent, View view, int position, long id){
         Groupe groupe = (Groupe)parent.getItemAtPosition(position);
-        //Intent intent = new Intent(this, GroupeActivity.class);
+        Intent intent = new Intent(this, GroupActivity.class);
         //intent.putExtra("idPers", idPers);
         //intent.putExtra("idGroupe", groupe.getId());
-        //startActivity(intent);
+        startActivity(intent);
     }
 
 }
